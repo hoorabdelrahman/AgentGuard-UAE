@@ -1,0 +1,11 @@
+# Global policy rules enforced by gateway/policy.py
+approved_destinations:        # hosts that evidence may be sent to
+  - evidence-store.internal
+prohibited_tools:             # never allowed for any agent, any task
+  - export_all
+  - delete_case
+  - send_external
+max_records_per_call: 25      # volume limit for search tools
+sensitive_scan_tools:         # tools whose arguments are scanned for personal identifiers
+  - create_report
+  - upload_evidence

@@ -1,0 +1,11 @@
+# Task catalogue: what each task type may do. Agents never hold standing access.
+investigate_case:
+  allowed_roles: [investigator]
+  tools: [read_case, search_evidence, create_report, upload_evidence]
+  max_calls: 15
+  ttl_seconds: 900
+summarize_case:
+  allowed_roles: [analyst, investigator]
+  tools: [read_case, create_report]
+  max_calls: 6
+  ttl_seconds: 600
